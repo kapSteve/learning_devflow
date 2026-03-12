@@ -1,5 +1,9 @@
 const page = () => {
-  return <div>Welcome to the ultimate Next.js course!</div>;
+  return (
+    <div>
+      <h1 className="text-light-500 text-3xl font-black">welcome to next.js course 👋</h1>
+    </div>
+  );
 };
 
 export default page;
