@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Inter, Space_Grotesk } from "next/font/google";
 import React from "react";
 
 import "./globals.css";
 
-const inter = localFont({
-  src: "./fonts/InterVF.ttf",
+const inter = Inter({
+  subsets: ["latin"],
   variable: "--font-inter",
-  weight: "100 200 300 400 500 700 800 900",
+  weight: ["100", "200", "300", "400", "500", "700", "800", "900"],
 });
 
-const spaceGrotesk = localFont({
-  src: "./fonts/SpaceGroteskVF.ttf",
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
   variable: "--font-space-grotesk",
-  weight: "300 400 500 700",
+  weight: ["300", "400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -28,7 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${spaceGrotesk.variable} antialiased`}>{children}</body>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }
